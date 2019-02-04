@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Calcular Notas</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap.css" />
+    <script src="angular.js"></script>
+    <script src="calcula_nota.js"></script>
+</head>
+
+<body ng-controller="myCtrl as vm">
+    <div class="jumbotron">
+        <h3>Calcular Notas</h3>
+        <table class="table table-striped">
+            <tr>
+                <th class="info">Nome</th>
+                <th class="info">Prova 1</th>
+                <th class="info">Prova 2</th>
+                <th class="info">Prova 3<br> Necessário</th>
+                <th class="info">Situação</th>
+            </tr>
+            <tr id="campoaluno" ng-repeat="student in vm.list">
+                <td>{{student.name}}</td>
+                <td>{{student.n1}}</td>
+                <td>{{student.n2}}</td>
+                <td>{{student.n3}}</td>
+                <td>{{student.status}}</td>
+            </tr>
+        </table>
+        <hr>
+        <form>
+            <input class="form-control" type="text" ng-model="vm.student.name" placeholder="Nome do Aluno">
+            <input id="prov1" class="form-control" type="number" ng-model="vm.student.n1" placeholder="Prova 1" max="10" min="0">
+            <input id="prov2" class="form-control" type="number" ng-model="vm.student.n2" placeholder="Prova 2" max="10" min="0">
+
+            <button id="AddContato" class="btn btn-primary btn-block" ng-click="vm.register(vm.student)" ng-disabled="!vm.student.name || !vm.student.n1 || !vm.student.n2">Adicionar
+                Nota</button>
+        </form>
+    </div>
+</body>
+</html>

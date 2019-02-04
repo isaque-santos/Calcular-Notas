@@ -1,0 +1,21 @@
+#AddContato {
+    margin-top: 10px;
+    background-color: #712647 !important;
+    border-color: #712647;
+}
+.info {
+    color: #b31559;
+}
+.jumbotron {
+    width: 600px;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.table {
+    margin-top: 20px;
+}
+.form-control {
+    margin-bottom: 5px;
+}
